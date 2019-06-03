@@ -1,0 +1,25 @@
+{
+  "name": "vanilla-image-uploader",
+  "version": "0.1.0",
+  "description": "A modern image uploader by using mordern javascript.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/key60529/vanilla-image-uploader.git"
+  },
+  "keywords": [
+    "vanillajs",
+    "ES6",
+    "image",
+    "uploader"
+  ],
+  "author": "KayL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/key60529/vanilla-image-uploader/issues"
+  },
+  "homepage": "https://github.com/key60529/vanilla-image-uploader#readme"
+}
