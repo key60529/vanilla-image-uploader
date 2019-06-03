@@ -1,0 +1,27 @@
+/* input type file style */
+.input-file-btn {
+  display: none; }
+  .input-file-btn ~ .custom_file_btn {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0; }
+    .input-file-btn ~ .custom_file_btn > span {
+      margin-right: 0.25em; }
+      .input-file-btn ~ .custom_file_btn > span:before {
+        content: "\F1C5";
+        font-family: FontAwesome; }
+
+.input-file-btn ~ .custom_file_btn {
+  padding: 0.5em 2em;
+  border-radius: 10px;
+  background-color: #2ab27b;
+  color: white;
+  box-shadow: 0 2px 1px #000000;
+  transition: transform 150ms ease; }
+  .input-file-btn ~ .custom_file_btn > span {
+    margin-right: 0.25em; }
+
+.input-file-btn:hover ~ .custom_file_btn, .input-file-btn:focus ~ .custom_file_btn {
+  transform: translateY(-2px);
+  background-color: #20895e; }
+

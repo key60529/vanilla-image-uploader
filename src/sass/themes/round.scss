@@ -1,0 +1,21 @@
+@import '../core';
+
+.input-file-btn {
+	& ~ .custom_file_btn {
+		padding: 0.5em 2em;
+		border-radius: 10px;
+		background-color: map-get($theme-colors, secondary);
+		color: white;
+		box-shadow: 0 2px 1px #000000;
+		transition: transform 150ms ease;
+		& > span {
+			margin-right: 0.25em;
+		}
+	}
+	&:hover, &:focus {
+		& ~ .custom_file_btn {
+			transform: translateY(-2px);
+			background-color: darken(map-get($theme-colors, secondary), 10%);
+		}
+	}
+}

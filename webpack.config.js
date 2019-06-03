@@ -1,11 +1,23 @@
-var path = require('path')
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = {
-  entry: ['./resources/assets/js/app.js', './resources/assets/scss/app.scss', './resources/assets/scss/custom.scss'],
+  entry: {
+    'vanilla-image-uploader': './src/js/vanilla-image-uploader.js',
+    demo: ['./src/js/demo.js', './src/sass/demo.scss'],
+    'theme-flat': './src/sass/themes/flat.scss',
+    'theme-round': './src/sass/themes/round.scss',
+  },
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'dist'),
+    library: {
+      root: 'vanillaImageUploader',
+      commonjs: 'vanilla-image-uploader',
+      amd: 'vanilla-image-uploader'
+    },
+    libraryTarget: 'umd'
   },
   module: {
     rules: [
@@ -19,14 +31,23 @@ module.exports = {
       },
       {
         test: /\.(s*)css$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          'css-loader', 'sass-loader'
+        ]
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin({ // define where to save the file
+    new FixStyleOnlyEntriesPlugin(),
+    new MiniCssExtractPlugin({ // define where to save the file
       filename: 'css/[name].css',
-      allChunks: true,
+      chunkFilename: 'css/[id].css',
     }),
   ],
 }

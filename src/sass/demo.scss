@@ -1,0 +1,26 @@
+body {
+	background-color: rgb(51,73,95);
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 90vh;
+	width: 100%;
+	.row {
+		display: flex;
+		flex: 1 1 nowrap;
+		.col {
+			flex: 1 1 nowrap;
+		}
+	}
+}
+
+.form-group {
+	label {
+		display: block;
+		margin-bottom: 8px;
+		color: white;
+	}
+}

@@ -1,0 +1,21 @@
+@import './themes/variables';
+
+///////////////////////////
+/* input type file style */
+///////////////////////////
+
+.input-file-btn {
+	display: none;
+	& ~ .custom_file_btn {
+		display: inline-flex;
+		align-items: center;
+		margin-bottom: 0;
+		& > span {
+			margin-right: 0.25em;
+			&:before {
+				content: "\f1c5";
+				font-family: FontAwesome;
+			}
+		}
+	}
+}

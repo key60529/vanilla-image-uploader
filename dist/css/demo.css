@@ -1,0 +1,20 @@
+body {
+  background-color: #33495f; }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  width: 100%; }
+  .container .row {
+    display: flex;
+    flex: 1 1 nowrap; }
+    .container .row .col {
+      flex: 1 1 nowrap; }
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: white; }
+

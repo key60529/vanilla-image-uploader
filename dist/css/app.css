@@ -1,0 +1,13 @@
+/* input type file style */
+.input-file-btn {
+  display: none; }
+  .input-file-btn ~ .custom_file_btn {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0;
+    background-color: #F4E9CE; }
+    .input-file-btn ~ .custom_file_btn > span {
+      margin-right: 0.25em; }
+  .input-file-btn:hover ~ .custom_file_btn, .input-file-btn:focus ~ .custom_file_btn {
+    background-color: #ebd6a4; }
+
