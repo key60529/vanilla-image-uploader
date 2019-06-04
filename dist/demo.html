@@ -32,7 +32,10 @@
 
 <script src="./js/demo.js"></script>
 <script type="text/javascript">
-  VanillaImageUploader.init('vanilla-image-uploader');
+  var imageUpload = new VanillaImageUploader({
+    name: 'vanilla-image-uploader',
+    label: 'Upload a photo'
+  });
 </script>
 </body>
 </html>

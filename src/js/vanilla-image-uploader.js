@@ -1,19 +1,28 @@
 // vanilla image uploader by KayL
+import InterfaceHandler from './interface-handler'
 
-const template = `
-<div class="file-box">
-  <input type="file" name="imageFile" id="imageFile" class="input-file-btn" accept="image/jpeg, image/png">
-  <label class="custom_file_btn" for="imageFile">
-      <span class="btn-icon"></span> Choose a file
-  </label>
-</div>
-<ul class="file-list"></ul>
-`
+let variables = {
+	name: 'imageFile',
+	label: 'Choose a file'
+}
 
 class VanillaImageUploader {
-	static init(el) {
-		let element = document.getElementById(el)
-		element.innerHTML = template
+
+	constructor(variables) {
+		this.variables = variables
+		this.init()
+	}
+
+	init() {
+		let element = document.getElementById(this.variables.name)
+		element.innerHTML = InterfaceHandler.renderButton(this.variables)
+		this.eventTracking()
+	}
+
+	eventTracking() {
+		let wrapper = document.getElementById(this.variables.name)
+		let target = wrapper.querySelector('#' + this.variables.name + '-input')
+		target.addEventListener('ValueChange', InterfaceHandler.renderPreview());
 	}
 }
 
