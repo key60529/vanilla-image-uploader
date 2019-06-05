@@ -19,3 +19,38 @@
 		}
 	}
 }
+
+// close button style
+.btn {
+	&.del-btn {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		background: none;
+		border: none;
+		height: 25px;
+		width: 25px;
+		z-index: 5;
+		&:before {
+			content: "\f00d";
+			font-family: FontAwesome;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+ul.file-preview {
+	list-style: none;
+	padding-left: 0;
+	li {
+		position: relative;	
+		img {
+			width: auto;
+			height: 100%;
+			max-width: 100%;
+			max-height: 250px;
+		}
+	}
+}

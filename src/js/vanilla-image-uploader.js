@@ -1,5 +1,6 @@
 // vanilla image uploader by KayL
 import InterfaceHandler from './interface-handler'
+import Helper from './helper'
 
 let variables = {
 	name: 'imageFile',
@@ -16,13 +17,20 @@ class VanillaImageUploader {
 	init() {
 		let element = document.getElementById(this.variables.name)
 		element.innerHTML = InterfaceHandler.renderButton(this.variables)
-		this.eventTracking()
 	}
 
-	eventTracking() {
-		let wrapper = document.getElementById(this.variables.name)
-		let target = wrapper.querySelector('#' + this.variables.name + '-input')
-		target.addEventListener('ValueChange', InterfaceHandler.renderPreview());
+	static async selectedTracking(input) {
+		let reader = await Helper.readURL(input)
+		reader.onload = function (e) {
+			InterfaceHandler.renderPreview(input, e.target.result)
+    }
+	}
+
+	static deletePreview(button) {
+		let el = button.closest('.file-preview')
+		let input = el.parentElement.querySelector('input[type=file]')
+		input.value = null
+		button.parentElement.remove()
 	}
 }
 

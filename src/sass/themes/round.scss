@@ -19,3 +19,18 @@
 		}
 	}
 }
+
+// close button style
+.btn {
+	&.del-btn {
+		border-radius: 50%;
+		background-color: map-get($theme-colors, secondary);
+		color: white;
+		box-shadow: 0 2px 1px #000000;
+		transition: transform 150ms ease;
+		&:hover {
+			transform: translateY(-2px);
+			background-color: darken(map-get($theme-colors, secondary), 10%);
+		}
+	}
+}
