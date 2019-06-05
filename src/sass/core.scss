@@ -42,10 +42,10 @@
 }
 
 ul.file-preview {
-	display: inline-block;
 	list-style: none;
 	padding-left: 0;
 	margin-top: 16px;
+	max-width: 100%;
 	li {
 		position: relative;	
 		img {
