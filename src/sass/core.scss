@@ -41,12 +41,14 @@
 	}
 }
 
+// preview style
 ul.file-preview {
 	list-style: none;
 	padding-left: 0;
 	margin-top: 16px;
 	max-width: 100%;
 	li {
+		display: inline-block;
 		position: relative;	
 		img {
 			width: auto;

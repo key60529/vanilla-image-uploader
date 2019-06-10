@@ -32,6 +32,7 @@ ul.file-preview {
   margin-top: 16px;
   max-width: 100%; }
   ul.file-preview li {
+    display: inline-block;
     position: relative; }
     ul.file-preview li img {
       width: auto;
