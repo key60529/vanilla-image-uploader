@@ -5,7 +5,7 @@ let options = {
 }
   
 export default class http {
-  constructor(options) {
-    
+  constructor(Object options) {
+    this.options = options
   }
 }
