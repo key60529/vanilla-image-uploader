@@ -5,7 +5,8 @@ import Helper from './helper'
 let variables = {
     name: 'imageFile',
     label: 'Choose a file',
-    intialImage: ''
+    intialImage: '',
+    isMultiple: false
 }
 
 class VanillaImageUploader {
@@ -22,18 +23,27 @@ class VanillaImageUploader {
     }
 
     static async selectedTracking(input) {
-        let reader = await Helper.readURL(input)
-        reader.onload = function (e) {
-            InterfaceHandler.renderPreview(input, e.target.result)
+      let readers = []
+      
+      if (input.files.length) {
+        // clear all previous rendered previews
+        document.querySelector('ul.file-preview').innerHTML = ''
+
+        // read all files and push to an array
+        for(let i = 0; i < input.files.length; i++) {
+          let file = await Helper.readURL(input.files[i])
+          readers.push(file)
         }
+  
+        Promise.all(readers).then((files) => {
+          for(let j = 0; j < files.length; j++) {
+            InterfaceHandler.renderPreview(input, files[j], j)
+          }
+          InterfaceHandler.showHelper(input)
+        })
+      }
     }
 
-    static deletePreview(button) {
-        let el = button.closest('.file-preview')
-        let input = el.parentElement.querySelector('input[type=file]')
-        input.value = null
-        button.parentElement.remove()
-    }
 }
 
 export default VanillaImageUploader

@@ -1,10 +1,17 @@
 export default class Helper {
-	static readURL(input) {
-		if (input.files && input.files[0]) {
-			console.log(input.files)
-	    let reader = new FileReader();
-	    reader.readAsDataURL(input.files[0]);
-	    return reader
-	  }
+	static readURL(file) {
+    return new Promise(function(resolve,reject){
+      let reader = new FileReader()
+
+      reader.onload = function(){
+          resolve(reader.result)
+      };
+
+      reader.onerror = function(){
+          reject(reader)
+      };
+
+      reader.readAsDataURL(file)
+    })
 	}
 }
