@@ -19,7 +19,14 @@ class VanillaImageUploader {
     init() {
         let element = document.getElementById(this.variables.name)
         element.innerHTML = InterfaceHandler.renderButton(this.variables)
-        if (this.variables.intialImage) InterfaceHandler.renderPreview(document.getElementById(this.variables.name), this.variables.intialImage)
+        if (this.variables.intialImage && Array.isArray(this.variables.intialImage)) {
+          console.log(this.variables.intialImage)
+          for(let i = 0; i < this.variables.intialImage.length; i++) {
+            InterfaceHandler.renderPreview(document.getElementById(this.variables.name), this.variables.intialImage[i])
+          }
+        } else if (this.variables.intialImage) {
+          InterfaceHandler.renderPreview(document.getElementById(this.variables.name), this.variables.intialImage)
+        }
     }
 
     static async selectedTracking(input) {

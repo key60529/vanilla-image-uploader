@@ -42,13 +42,15 @@
 <script type="text/javascript">
   var imageUpload = new VanillaImageUploader({
     name: 'vanilla-image-uploader',
-    label: 'Upload a photo'
+    label: 'Upload a photo',
+    intialImage: "http:\/\/localhost:8080\/storage\/21\/download.png"
   });
 
   var multiImage = new VanillaImageUploader({
     name: 'multi-image',
     label: 'Upload photos',
-    isMultiple: true
+    isMultiple: true,
+    intialImage: ["http:\/\/localhost:8080\/storage\/21\/download.png","http:\/\/localhost:8080\/storage\/22\/49nst0Ll_400x400.jpeg","http:\/\/localhost:8080\/storage\/23\/21260cc6-c545-4571-8f59-cd96052b327e_SMFE_Site_Buttons-SMALL@3x.png"] 
   });
 </script>
 </body>

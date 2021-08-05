@@ -1,6 +1,6 @@
 {
   "name": "vanilla-image-uploader",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A modern image uploader by using mordern javascript.",
   "main": "./dist/js/vanilla-image-uploader.js",
   "scripts": {
