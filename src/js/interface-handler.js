@@ -3,7 +3,7 @@ export default class InterfaceHandler {
 		return `
 			<div class="file-box">
 			  <input type="file"
-               name="${variables.name}"
+               name="${variables.name}${variables.isMultiple ? "[]" : ""}"
                id="${variables.name}-input"
                class="input-file-btn"
                accept="image/jpeg, image/png"
@@ -20,6 +20,7 @@ export default class InterfaceHandler {
 	}
 
 	static renderPreview(target, url, key) {
+    console.log(target.parentElement.parentElement)
 		let wrapper = target.parentElement.parentElement.querySelector('.file-preview')
 		let template = `
 			<li>

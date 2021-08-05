@@ -28,13 +28,26 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label>Multi Images</label>
+        <div id="multi-image"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="./js/demo.js"></script>
 <script type="text/javascript">
   var imageUpload = new VanillaImageUploader({
     name: 'vanilla-image-uploader',
-    label: 'Upload a photo',
+    label: 'Upload a photo'
+  });
+
+  var multiImage = new VanillaImageUploader({
+    name: 'multi-image',
+    label: 'Upload photos',
     isMultiple: true
   });
 </script>

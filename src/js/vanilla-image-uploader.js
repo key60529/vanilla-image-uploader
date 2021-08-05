@@ -27,7 +27,7 @@ class VanillaImageUploader {
       
       if (input.files.length) {
         // clear all previous rendered previews
-        document.querySelector('ul.file-preview').innerHTML = ''
+        input.parentElement.parentElement.querySelector('ul.file-preview').innerHTML = ''
 
         // read all files and push to an array
         for(let i = 0; i < input.files.length; i++) {
